@@ -1,12 +1,14 @@
+Bnapus                  Cross structure for complete Brassica napus
+                        data
 bim.effects             Bayesian QTL map of loci and effects
 bim.fdr                 Bayesian False Discovery Rate for QTL mapping
 bim.model               Bayesian model selection for number and
                         pattern of QTL across genome
-bim.                    Bayesian QTL estimation and mapping of loci
+bim.qtl                 Bayesian QTL estimation and mapping of loci
 bmapqtl.options         Options Settings for BmapQTL
-Bnapus                  Cross structure for complete Brassica napus
-                        data
 fisch                   Eight QTL Stephens and Fisch simulated data
+plot.bim                Diagnostics plots for Bayesian interval
+                        mapping
 plot.bim.diag           Marginal and model-conditional summaries of
                         Bayesian interval mapping diagnostics
 plot.bim.loci           Jittered plot of Bayesian QTL loci samples by
@@ -15,8 +17,6 @@ plot.bim.mcmc           Bayesian MCMC sequence plots for burnin and
                         iterations.
 plot.bim.model          Graphical model assessment for Bayesian
                         interval mapping
-plot.bim                Diagnostics plots for Bayesian interval
-                        mapping
 read.bim                Read samples from WinQTL output
 read.bmapqtl            Read and write options for WinQTL
 run.bmapqtl             Run Bmapqtl reversible jump MCMC

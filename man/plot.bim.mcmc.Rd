@@ -42,6 +42,7 @@ longer. No formal assessment is provided.
 
 \examples{
 data( verngeo.bim )
+\testonly{library(qtl)}
 plot.bim.mcmc( verngeo.bim )
 }
 \keyword{models}

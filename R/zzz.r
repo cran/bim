@@ -1,6 +1,6 @@
 #####################################################################
 ##
-## $Id: zzz.R,v 1.1 2003/09/12 yandell@stat.wisc.edu Exp $
+## $Id: zzz.r,v 1.1 2004/04/30 14:04:19 jgentry Exp $
 ##
 ## Part of the R/bim package
 ##
@@ -25,8 +25,7 @@
 .First.lib <- function(lib, pkg) {
   library.dynam("bim", pkg, lib)
   require(qtl)
-  require(modreg)
-  require(mva)
+  require(stats)
 }
 
 # end of zzz.R

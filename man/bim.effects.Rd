@@ -76,10 +76,9 @@ lines delineate chromosomes.
 \examples{
 data( vern )
 data( verngeo.bim )
-\dontrun{
+\testonly{library(qtl)}
 vern.qtl <- bim.effects( verngeo.bim, vern, 2 )
 plot.bim.effects( verngeo.bim, vern, 2, qtl = vern.qtl )
-}
 }
 \keyword{models}
 \keyword{hplot}

@@ -1,6 +1,6 @@
 #####################################################################
 ##
-## $Id: bmapqtl.R,v 1.0 2002/07/04 yandell@stat.wisc.edu Exp $
+## $Id: bmapqtl.r,v 1.1 2004/04/30 14:04:18 jgentry Exp $
 ##
 ##     Copyright (C) 2002 Brian S. Yandell
 ##
@@ -61,6 +61,8 @@ read.bmapqtl <- function( dir = ".",
   bmapqtl$prior.add <- nvals[12+2*nqtl+1:2]
   bmapqtl$prior.dom <- nvals[14+2*nqtl+1:2]
   bmapqtl$runfile <- nvalfile
+  if(!exists(".bmapqtl.options"))
+    bmapqtl.options.init()
   for( i in names(bmapqtl))
     .bmapqtl.options[[i]] <<- bmapqtl[[i]]
   bmapqtl

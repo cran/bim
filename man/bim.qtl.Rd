@@ -53,6 +53,7 @@ estimates.
 \examples{
 data( vern )
 data( verngeo.bim )
+\testonly{library(qtl)}
 plot.bim.qtl( verngeo.bim, vern, 2 )
 }
 \keyword{models}

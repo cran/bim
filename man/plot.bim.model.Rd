@@ -40,6 +40,7 @@ plot.bim.model( x, cross = NULL, nqtl = 1, pattern=NULL, exact=FALSE,
 \examples{
 data( vern )
 data( verngeo.bim )
+\testonly{library(qtl)}
 plot.bim.model( verngeo.bim, vern, 2 )
 }
 \keyword{models}

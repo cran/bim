@@ -25,6 +25,9 @@ several `better' models. Library R/bim requires R/qtl and R/modreg.
 <<echo=TRUE>>=
 library(bim)
 @
+<<echo=FALSE>>=
+library(qtl)
+@
 
 \section{Bayesian Interval Mapping}
 

@@ -7,7 +7,7 @@
 %\VignettePackage{bim}
 \documentclass{article}
 
-\usepackage{/unsup/R-1.7.1/lib/R/share/texmf/Sweave}
+\usepackage{/unsup/R-1.9.0/lib/R/share/texmf/Sweave}
 \begin{document}
 
 \title{Bayesian Interval Mapping}
@@ -61,7 +61,7 @@ Brassica napus}  used by Satagopan et al (1996).
 > plot(vern)
 \end{Sinput}
 \end{Schunk}
-\includegraphics{bim_summary-002}
+\includegraphics{bim-003}
 
 These data are treated as a backcross (although in fact they are from
 a double haploid, homozygous at every locus). The plot, from library
@@ -119,7 +119,7 @@ graphical idea of how well the simulations are `mixing'.
 > plot.bim.mcmc(vernpois.bim)
 \end{Sinput}
 \end{Schunk}
-\includegraphics{bim_summary-005}
+\includegraphics{bim-006}
 
 A jittered plot of quantitative trait loci by chromosome shows the
 where the posterior concentrates along the genome relative to the
@@ -130,7 +130,7 @@ marker map.
 > plot.bim.loci(vernpois.bim, vern)
 \end{Sinput}
 \end{Schunk}
-\includegraphics{bim_summary-006}
+\includegraphics{bim-007}
 
 Model selection is assisted by four plots. The top two concern the
 number of QTL while the bottom two are for the pattern of loci across
@@ -153,9 +153,11 @@ Bayes factor ratios for number of QTL
   1   2   3   4   5   6   7   8 
 1.0 1.6 0.5 0.2 0.1 0.1 0.1 0.2 
 model posterior above cutoff 1 as %
+pattern
 2*1   1 3*1 4*1 5*1 
  52  22  17   6   2 
 Bayes factor ratios for chromosome pattern
+pattern
 2*1   1 3*1 4*1 5*1 
 1.0 1.3 0.2 0.1 0.0 
 \end{Soutput}
@@ -192,18 +194,22 @@ $nqtl$bfse
 
 $pattern
 $pattern$posterior
+pattern
   2*1     1   3*1   4*1   5*1 
 0.519 0.222 0.172 0.062 0.016 
 
 $pattern$prior
+pattern
        2*1          1        3*1        4*1        5*1 
 0.14936121 0.04978707 0.22404181 0.22404181 0.16803136 
 
 $pattern$bf
+pattern
        2*1          1        3*1        4*1        5*1 
 1.00000000 1.28323699 0.22093770 0.07964033 0.02740313 
 
 $pattern$bfse
+pattern
         2*1           1         3*1         4*1         5*1 
 0.030443099 0.075966162 0.015329245 0.009795772 0.006795754 
 
@@ -226,7 +232,7 @@ attr(,"class")
 [1] "bim.model"
 \end{Soutput}
 \end{Schunk}
-\includegraphics{bim_summary-007}
+\includegraphics{bim-008}
 
 The effects plots show the quantitative trait loci by a histogram and
 density (blue) on the top plot and effects (additive and possibly
@@ -262,7 +268,7 @@ Smoothing spline parameters for additive effects:
 0.9004665 
 \end{Soutput}
 \end{Schunk}
-\includegraphics{bim_summary-008}
+\includegraphics{bim-009}
 
 Finally, summary diagnostics for model parameters are shown as
 histograms and boxplots conditional on the number of QTL. Notice how
@@ -296,7 +302,7 @@ conditional heritability
 0.296 0.331 0.331 0.343 0.316 0.306 0.291 0.341 
 \end{Soutput}
 \end{Schunk}
-\includegraphics{bim_summary-009}
+\includegraphics{bim-010}
 
 All of these plots can be produced by one call to
 \texttt{plot(vernpois.bim,vern)}. Following this intial investigation, we
@@ -338,18 +344,22 @@ $nqtl$bfse
 
 $pattern
 $pattern$posterior
+pattern
        2*1        3*1        4*1        5*1 
 0.66709512 0.22107969 0.07969152 0.02056555 
 
 $pattern$prior
+pattern
       2*1       3*1       4*1       5*1 
 0.1493612 0.2240418 0.2240418 0.1680314 
 
 $pattern$bf
+pattern
        2*1        3*1        4*1        5*1 
 1.00000000 0.22093770 0.07964033 0.02740313 
 
 $pattern$bfse
+pattern
         2*1         3*1         4*1         5*1 
 0.025326572 0.014867985 0.009702953 0.006779970 
 
@@ -372,7 +382,7 @@ attr(,"class")
 [1] "bim.model"
 \end{Soutput}
 \end{Schunk}
-\includegraphics{bim_summary-010}
+\includegraphics{bim-011}
 
 \noindent and reexamine the effects
 
@@ -381,7 +391,7 @@ attr(,"class")
 > plot.bim.effects(vernpois.bim, vern, pattern = c(1, 1))
 \end{Sinput}
 \end{Schunk}
-\includegraphics{bim_summary-011}
+\includegraphics{bim-012}
 
 \noindent This subsetting is even more effective for full-genome
 studies. Consider analyzing the full \texttt{Bnapus} dataset for the
@@ -407,6 +417,6 @@ $fdr
 0.19 0.74 0.87 0.95 0.99 
 \end{Soutput}
 \end{Schunk}
-\includegraphics{bim_summary-012}
+\includegraphics{bim-013}
 
 \end{document}

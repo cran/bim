@@ -1,6 +1,6 @@
 #####################################################################
 ##
-## $Id: effects.R,v 1.0 2002/07/12 yandell@stat.wisc.edu Exp $
+## $Id: effects.r,v 1.1 2004/04/30 14:04:18 jgentry Exp $
 ##
 ##     Copyright (C) 2002 Brian S. Yandell
 ##
@@ -23,9 +23,6 @@ bim.qtl <- function( x, cross = bim.cross( x ),
                     nqtl=1, pattern=NULL, exact = FALSE, chr,
                     bw = 2, levels = seq( 0.5, 0.95, by = 0.05 ))
 {
-  require(qtl)
-  require(modreg)
-
   ## subset x and cross
   if (!is.null(pattern)) 
     nqtl <- max(nqtl, length(pattern))
@@ -114,8 +111,6 @@ bim.effects <- function (x, cross = bim.cross( x ),
                          bw = 2, 
                          qtl = bim.qtl( x, cross, nqtl, pattern, exact,, bw ))
 {
-  require(qtl)
-  require(modreg)
   estfn <- function(locus, add, chrom, loci, nchr ) {
     nloci <- names(loci)
     est <- sd <- double(length(nloci))
@@ -218,8 +213,6 @@ plot.bim.effects <- function (x, cross = bim.cross( x ),
                               mfcol = c(2 + domhere, 1), ...) 
 {
   project <- project
-  require(qtl)
-  require(modreg)
   mpos <- function(cross, cumchrlen, loci, est = rep(0, length(loci))) {
     ## place marker positions on map
     map <- pull.map( cross )
@@ -341,8 +334,6 @@ plot.bim.qtl <- function (x, cross = bim.cross( x ),
                           qtl = bim.qtl( x, cross, nqtl, pattern, exact,, bw ),
                           level = .8, col = "black", add = FALSE, ...) 
 {
-  require(qtl)
-  require(modreg)
   mpos <- function(cross, cumchrlen ) {
     ## place marker positions on map
     map <- pull.map( cross )

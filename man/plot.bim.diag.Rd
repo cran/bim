@@ -8,8 +8,8 @@ as LOD, variance, or heritability.
 }
 \usage{
 plot.bim.diag(x, nqtl=1, pattern=NULL, exact=FALSE,
-  items=c("herit", "LOD"), mains=items,
-  mfrow=c(length(items), 2), \dots )
+  items=<<see below>>, mains=items,
+  mfrow=<<see below>>, \dots )
 }
 \arguments{
   \item{x}{ object of class \code{bim} }
@@ -18,7 +18,8 @@ plot.bim.diag(x, nqtl=1, pattern=NULL, exact=FALSE,
   \item{exact}{subset on exact pattern or number of QTL if true}
   \item{items}{diagnostics to be summarized; must be column of data}
   \item{mains}{titles for items}
-  \item{mfrow}{plot arrangement parameter for \code{par()}}
+  \item{mfrow}{plot arrangement parameter for \code{par()} (default is
+    rows = number of items by cols = 2) }
   \item{\dots}{graphical parameters can be given as arguments to \code{\link[base]{plot}}}
 }
 \details{
@@ -40,6 +41,7 @@ plot.bim.diag(x, nqtl=1, pattern=NULL, exact=FALSE,
 
 \examples{
 data( verngeo.bim )
+\testonly{library(qtl)}
 plot.bim.diag( verngeo.bim, 2, items = c("LOD","herit") )
 }
 \keyword{models}

@@ -63,6 +63,7 @@ adapted to Bayesian setting.
 \examples{
 data( vern )
 data( verngeo.bim )
+\testonly{library(qtl)}
 plot.bim.fdr( verngeo.bim, vern, pattern=c(1,1) )
 }
 \keyword{models}

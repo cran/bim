@@ -74,8 +74,8 @@ run.bmapqtl(cross, pheno=1, chrom=0, result.file="")
 }
 
 \examples{
-\dontrun{
 data(vern)
+\dontrun{
 bim = run.bmapqtl(vern)
 plot(bim)
 }

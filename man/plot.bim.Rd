@@ -32,6 +32,7 @@ plot.bim(x, cross, nqtl=1, pattern=NULL, exact=FALSE, ... )
 \examples{
 data( vern )
 data( verngeo.bim )
+\testonly{library(qtl)}
 plot.bim( verngeo.bim, vern )
 }
 \keyword{hplot}

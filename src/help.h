@@ -1,7 +1,7 @@
 #ifndef HELPFILE_GUARD
 #define HELPFILE_GUARD
 /*
- * $Id: help.h%v 3.50 1993/07/09 05:35:24 woo Exp $
+ * $Id: help.h,v 1.1 2004/04/30 14:04:25 jgentry Exp $
  *
  */
 

@@ -63,10 +63,8 @@ bmapqtl.options(\dots,reset=FALSE)
 \seealso{\code{\link[base]{options}}}
 
 \examples{
-\dontrun{
 bmapqtl.options()
 bmapqtl.options(niter=100000, by=1000)
-}
 }
     
 \keyword{utilities}

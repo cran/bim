@@ -63,9 +63,10 @@ Remaining columns are for individual DH lines (identifier 302-455).
 }
 \examples{
 data(Bnapus)
-\dontrun{
+\testonly{library(qtl)}
 summary(Bnapus)
 plot(Bnapus)
+\dontrun{
 Bnapus.bim = run.bmapqtl(Bnapus,"log10flower8")
 }
 }

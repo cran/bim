@@ -1,6 +1,6 @@
 #####################################################################
 ##
-## $Id: bim.R,v 1.0 2002/07/13 yandell@stat.wisc.edu Exp $
+## $Id: bim.r,v 1.1 2004/04/30 14:04:18 jgentry Exp $
 ##
 ##     Copyright (C) 2002 Brian S. Yandell
 ##
@@ -34,11 +34,17 @@ read.bim <- function( dir, bimfile, nvalfile = "nval.dat", na.strings = "." )
   cat( "MCMC prior for number of QTL assumed to be", bmapqtl$prior.nqtl,
       "with mean", bmapqtl$mean.nqtl, "\n" )
 
-  tbl <- read.table( bimfile, header = TRUE, na.strings = na.strings )
+  ## skip past summary stuff
+  tmp = scan(bimfile,"",sep="\n",blank.lines.skip=FALSE,quiet=TRUE)
+  skip = pmatch("niter",tmp) - 1
+  nrows = length(tmp) - skip - 4
+  
+  tbl <- read.table(bimfile, header = TRUE, na.strings = na.strings,
+                    skip = skip, fill = TRUE, nrows = nrows, ...)
   burnin <- tbl[ tbl$niter < 0 & tbl$iqtl == 1,
-    c("niter","nqtl","LOD","mu","sigmasq","addvar","domvar","esth") ]
+                c("niter","nqtl","LOD","mu","sigmasq","addvar","domvar","esth") ]
   iter <- tbl[ tbl$niter >= 0 & tbl$iqtl == 1,
-    c("niter","nqtl","LOD","mu","sigmasq","addvar","domvar","esth") ]
+              c("niter","nqtl","LOD","mu","sigmasq","addvar","domvar","esth") ]
   names( burnin ) <- names( iter ) <- 
     c("niter","nqtl","LOD","mean","envvar","addvar","domvar","herit")
   no.dom <- all( is.na( iter$domvar ))
@@ -66,7 +72,7 @@ summary.bim <- function( object, ... )
   cat( "Percentages for number of QTL detected:" )
   print( round( 100 * table( object$iter$nqtl ) / nrow( object$iter )))
   cat( "\nDiagnostic summaries:\n" )
-  print( summary( object$iter[,1] ))
+  print( summary( object$iter[,-1] ))
   invisible( )
 }
 ##############################################################################
@@ -95,9 +101,9 @@ bim.prior <- function( bim, range )
   prior <- bim$bmapqtl$prior.nqtl
   mean <- bim$bmapqtl$mean.nqtl
   pr <- switch( prior,
-         geometric = ( 1 / mean ) ^ range / ( 1 - ( 1 / mean )),
-         poisson   = dpois( range, mean ),
-         uniform   = rep( 1 / ( 1 + mean ), length( range )))
+               geometric = ( 1 / mean ) ^ range / ( 1 - ( 1 / mean )),
+               poisson   = dpois( range, mean ),
+               uniform   = rep( 1 / ( 1 + mean ), length( range )))
   if( is.null( pr ))
     stop( "only geometric, poisson, and uniform priors recognized\n" )
   names( pr ) <- range
@@ -194,7 +200,7 @@ bim.match <- function( bim, pattern )
   }
   mypat <- patfn( table( pattern ))
   counts <- tapply( bim$loci$chrom, bim$loci$niter, function( x ) table( x ),
-    simplify = FALSE )
+                   simplify = FALSE )
   patterns <- unlist( lapply( counts, patfn ))
   as.numeric( names( counts )[ !is.na( match( patterns, mypat )) ] )
 }
@@ -236,7 +242,7 @@ plot.bim <- function( x, cross = bim.cross( x ),
   qtl <- plot.bim.effects( x, cross, nqtl, pattern, exact, ... )
   summary( qtl )
   cat( "summary diagnostics as histograms and boxplots by number of QTL\n" )
-  plot.bim.diag( x, nqtl, ... )
+  plot.bim.diag( x, nqtl, pattern, exact, ... )
   invisible()
 }
 ##############################################################################
@@ -247,7 +253,12 @@ plot.bim.mcmc <- function( x, element = c("burnin","iter"),
                           types = c("b",rep("l", length( items ) - 1 )),
                           ... )
 {
-  require( modreg )
+  tmp = unlist( lapply( x, nrow ))[element] > 0
+  if( missing( element ))
+    element = element[tmp]
+  if( missing( xlab ))
+    xlab = xlab[tmp]
+
   tmpar <- par( mfcol = c( length( items ), length( element )),
                mar = c(3.1,3.1,0.1,0.1) )
   on.exit( par( tmpar ))
@@ -266,13 +277,11 @@ plot.bim.mcmc <- function( x, element = c("burnin","iter"),
 ##############################################################################
 bim.smooth <- function( x, y )
 {
-  require( modreg )
-  
   ux <- unique( x )
   if( length( ux ) < 50 ) {
-#    smo <- list( x = sort( ux ),
-#                y = rep( mean( y ), length( ux )))
-#    smo$sd <- rep( mad( y ), length( smo$x ))
+                                        #    smo <- list( x = sort( ux ),
+                                        #                y = rep( mean( y ), length( ux )))
+                                        #    smo$sd <- rep( mad( y ), length( smo$x ))
     lmy <- lm( y ~ x )
     smo <- list( x = sort( ux ),
                 y = predict( lmy, data.frame( x = sort( ux ))),
@@ -290,7 +299,6 @@ plot.bim.loci <- function( x, cross = bim.cross( x ),
                           chr, labels = TRUE, amount = .35,
                           cex = bim.cex( x ), ... )
 {
-  require( qtl )
   amount <- max( 0, min( 0.45, amount ))
   x <- subset( x, cross, nqtl, pattern, exact, chr )
   
@@ -301,7 +309,7 @@ plot.bim.loci <- function( x, cross = bim.cross( x ),
   loci <- x$loci[ , c("chrom","locus") ]
   if( 0 == nrow( loci )) {
     warning( "no mcmc samples on chosen chromosomes: ",
-      paste( chr, collapse = "," ))
+            paste( chr, collapse = "," ))
     return( )
   }
   plot( range( loci$chrom ) + c(-.5,.5), range( loci$locus ),
@@ -317,7 +325,7 @@ plot.bim.loci <- function( x, cross = bim.cross( x ),
     for( i in uchrom ) {
       tmp <- map[[ nmap[i] ]]
       text( rep( i-.5, length( tmp )), cxy + tmp, names( tmp ),
-        adj = 0, cex = 0.5, col = "blue" )
+           adj = 0, cex = 0.5, col = "blue" )
       for( j in tmp )
         lines( i + c(-.5,.5), rep( j, 2 ), col = "blue",
               lwd = 2 )
@@ -350,11 +358,10 @@ bim.pattern <- function( bim, cross = bim.cross( bim ),
                         nqtl = 1, pattern = NULL, exact = FALSE,
                         cutoff = 1 )
 {
-  require( qtl )
   bim <- subset( bim, cross, nqtl, pattern, exact )
   loci <- bim$loci
   counts <- tapply( loci$chrom, loci$niter, function( x ) table( x ),
-    simplify = FALSE )
+                   simplify = FALSE )
   pattern <- unlist( lapply( counts, function(x) {
     tmp <- paste( ifelse( x > 1,
                          paste( x, "*", sep=""),
@@ -368,7 +375,7 @@ bim.pattern <- function( bim, cross = bim.cross( bim ),
   posterior <- posterior / sum( posterior )
   tmp <- posterior >= cutoff / 100
   if( sum( tmp ))
-  posterior <- posterior[tmp]
+    posterior <- posterior[tmp]
   else {
     cat( "warning: posterior cutoff of ", cutoff,
         "is too large and is being ignored\n",
@@ -415,7 +422,7 @@ bim.model <- function( bim, cross = bim.cross( bim ),
                       nqtl = 1, pattern = NULL, exact = FALSE,
                       cutoff = 1 )
 {
-  bim <- subset.bim( bim, cross, nqtl, pattern, exact )
+  bim <- subset( bim, cross, nqtl, pattern, exact )
   assess <- list( )
   assess$nqtl <- bim.nqtl( bim )$nqtl
   assess$pattern <- bim.pattern( bim, cross, cutoff = cutoff )$pattern
@@ -468,9 +475,8 @@ plot.bim.pattern <- function( x,
                              threshold = c( weak=3, moderate=10, strong=30 ),
                              units = 2, rescale = TRUE, ... )
 {
-  require( qtl )
   ## plot posterior
-  bar <- barplot( x$posterior, col = "white", names = bars, ... )
+  bar <- barplot( c(x$posterior), col = "white", names = bars, ... )
   tmp <- if( rescale )
     x$prior * max( x$posterior ) / max( x$prior )
   else
@@ -494,7 +500,7 @@ plot.bim.pattern <- function( x,
   x$bf[ x$bf == 0 | x$prior == 0 ] <- NA
 
   plot( seq( bars ), x$bf, log = "y", xaxt = "n", xlim = c( 0.5, length( bars )),
-    xlab = "", ylab = "", ... )
+       xlab = "", ylab = "", ... )
   mtext( labels[1], 1, 2 )
   mtext( "posterior / prior", 2, 2 )
   mtext( "Bayes factor ratios", 3, 0.5 )
@@ -548,30 +554,27 @@ plot.bim.pattern <- function( x,
 ### marginal histograms
 ##############################################################################
 plot.bim.diag <- function( x,
-                     nqtl = 1, pattern = NULL, exact = FALSE,
-                     items= names( x$iter )[-(1:2)],
-                     mains = items,
-                     mfrow = c(nhist,2), ... )
+                          nqtl = 1, pattern = NULL, exact = FALSE,
+                          items= names( x$iter )[-(1:2)],
+                          mains = items,
+                          mfrow = c(nhist,2), ... )
 {
   x <- subset( x,, nqtl, pattern, exact )
   nhist <- length( items )
   tmpar <- if( !is.null( mfrow ))
-    par( mfrow = mfrow, mar=c(3.6,4.1,0.6,0.1) )
+    par( mfrow = mfrow, mar=c(2.1,2.1,0.1,0.1), oma = c(0,0,3,0) )
   else
-    par( mar=c(3.6,4.1,0.6,0.1) )
+    par( mar=c(2.1,3.6,0.1,0.1))
   on.exit( par( tmpar ))
+
   mains[ match( "herit", mains, nomatch = 0 ) ] <- "heritability"
   for( i in seq( nhist )) {
     ## marginal histogram
-    main <- as.expression( substitute( paste( "marginal ", main, ", ",
-        italic(m) >=  nqtl),
-        list( nqtl = nqtl, main = mains[i] )))
     tmp <- x$iter[ , items[i] ]
     tmp <- tmp[ !is.na( tmp ) ]
     med <- quantile( tmp, c(.25,.5,.75) )
-    plot( density(tmp ), main = "", xlab = "", ylab = "", ... )
-    mtext( "density", 2, 2.5 )
-    mtext( main, 1, 2.5 )
+    plot( density(tmp ), main = "", xlab = "", ylab = "", yaxt = "n", ... )
+    mtext( mains[i], 2, 0.5 )
     ## hand-made boxplot on its side
     b <- boxplot( tmp, plot = FALSE )
     tmp <- par("usr")[4] / 8
@@ -586,11 +589,19 @@ plot.bim.diag <- function( x,
     ## conditional boxplots
     tmp <- split( x$iter[[ items[i] ]], x$iter$nqtl )
     boxplot( tmp )
-    mtext( paste( mains[i], "conditional on number of QTL" ), 1, 2.5 )
-    mtext( mains[i], 2, 2.5 )
 
     cat( items[i], round( med[2], 3 ), "\n" )
     cat( "conditional", mains[i], "\n" )
     print( round( unlist( lapply( tmp, median, na.rm = TRUE )), 3 ))
+  }
+  if( !is.null( mfrow )) {
+    main = "marginal and nqtl-conditional diagnostics with"
+    if( !exact )
+      main = paste( main, "at least" )
+    if( is.null( pattern ))
+      main = paste( main, nqtl, "QTL" )
+    else
+      main = paste( main, "pattern", paste( pattern, sep = "", collapse = "," ))
+    mtext( main, 3, 1, outer = TRUE )
   }
 }

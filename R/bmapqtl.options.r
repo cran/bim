@@ -40,7 +40,6 @@ assign(".bmapqtl.options",.bmapqtl.options,1)
 }
 bmapqtl.options <- function(...,reset=FALSE)
 {
- 
   # take the arguments
   args <- list(...)
   nargu <- length(args)
@@ -55,7 +54,7 @@ bmapqtl.options <- function(...,reset=FALSE)
   # assign values
   if(nargu&!reset) {
     for (i in 1:nargu) {
-      argname <- names(args[i]) # argument name
+      argname <- names(args)[i] # argument name
       argvalue <- args[[i]] # argument value
       if(is.null(argname)) { # trying to get an option
         result[[i]] <- .bmapqtl.options[[argvalue]]
@@ -80,7 +79,7 @@ bmapqtl.options <- function(...,reset=FALSE)
                "prior.nqtl" = {
                  priors = c("geometric","poisson","uniform")
                  argvalue <- priors[ pmatch( tolower( argvalue ), priors, nomatch = 1 ) ]
-               },
+               }
                )
         # assign values
         .bmapqtl.options[[argname]] <<- argvalue

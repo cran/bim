@@ -1,6 +1,6 @@
 #####################################################################
 ##
-## $Id: run.bmapqtl.R,v 1.1 2003/09/12 yandell@stat.wisc.edu Exp $
+## $Id: run.bmapqtl.r,v 1.1 2004/04/30 14:04:19 jgentry Exp $
 ## run.bmapqtl.R, 08/14/2003 hao@jax.org
 ##
 ## Part of the R/bim package
@@ -28,8 +28,9 @@
 run.bmapqtl <- function(cross, pheno=1, chrom=0, result.file="")
 
 {
-  require(qtl)
-  # error checking stuff
+  if( !exists( ".bmapqtl.options" ))
+    bmapqtl.options()
+  ## error checking stuff
   if (class(cross)[2] != "cross")
     stop("The first input variable is not an object of class cross.")
   if(is.character(pheno))

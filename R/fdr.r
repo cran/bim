@@ -1,6 +1,6 @@
 #####################################################################
 ##
-## $Id: fdr.R,v 1.0 2003/09/14 yandell@stat.wisc.edu Exp $
+## $Id: fdr.r,v 1.1 2004/04/30 14:04:19 jgentry Exp $
 ##
 ##     Copyright (C) 2003 Brian S. Yandell
 ##
@@ -31,7 +31,8 @@ bim.fdr <- function( x, cross, nqtl = 1, pattern=NULL, exact=FALSE, chr, ...,
   x <- subset(x, cross, nqtl, pattern, exact, chr )
   if( is.numeric( pattern ))
     pattern <- names( cross$geno )[pattern]
-  cross <- subset( cross, chr )
+  if( !missing( chr ))
+    cross <- subset( cross, chr )
   map <- pull.map( cross )
   pattern <- match( pattern, names( map ))
   pattern <- pattern[ !is.na( pattern ) ]
@@ -60,7 +61,6 @@ bim.fdr <- function( x, cross, nqtl = 1, pattern=NULL, exact=FALSE, chr, ...,
   levels <- as.numeric( levels )
   
   ## prior probability of no QTL at locus
-  require(modreg)
   prob <- ( 1 - levels ) / ( 1 - size$all )
   prob[ prob == Inf ] <- NA
   tmp <- !is.na( prob )

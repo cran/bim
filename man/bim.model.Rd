@@ -8,15 +8,16 @@ Posterior number and pattern of QTL, along with posterior/prior Bayes
 factor ratios.
 }
 \usage{
-bim.model( bim, cross = NULL, nqtl = 1, pattern=NULL, exact=FALSE,
+bim.model( bim, cross, nqtl = 1, pattern=NULL, exact=FALSE,
   cutoff = 1 )
 bim.nqtl( bim )
-bim.pattern( bim, cross = NULL, nqtl = 1, pattern=NULL, exact=FALSE,
+bim.pattern( bim, cross, nqtl = 1, pattern=NULL, exact=FALSE,
   cutoff = 1 )
 }
 \arguments{
   \item{bim}{ object of class \code{bim} }
-  \item{cross}{ corresponding object of class \code{cross} }
+  \item{cross}{ corresponding object of class \code{cross} (extracted by
+  \code{bim.cross} if not provided)}
   \item{nqtl}{subset on number of QTL}
   \item{pattern}{subset on chromosome pattern of QTL}
   \item{exact}{subset on exact pattern or number of QTL if true}
@@ -54,9 +55,8 @@ bim.pattern( bim, cross = NULL, nqtl = 1, pattern=NULL, exact=FALSE,
 \seealso{\code{\link{plot.bim}},\code{\link{plot.bim.model}},\code{\link{subset.bim}}}
 
 \examples{
-\dontrun{
 data( verngeo.bim )
+\testonly{library(qtl)}
 bim.model( verngeo.bim )
-}
 }
 \keyword{models}

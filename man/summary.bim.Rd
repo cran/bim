@@ -25,6 +25,7 @@ summary.bim.qtl( object, \dots )
 
 \examples{
 data( verngeo.bim )
+\testonly{library(qtl)}
 summary( verngeo.bim )
 verngeo.model <- bim.model( verngeo.bim )
 summary( verngeo.model )
