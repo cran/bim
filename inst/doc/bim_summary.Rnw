@@ -1,0 +1,153 @@
+% \VignetteIndexEntry{Bayesian Interval Mapping}
+% \VignetteDepends{bim}
+% \VignetteDepends{qtl}
+% \VignetteDepends{modreg}
+% \VignetteDepends{mva}
+% \VignetteKeywords{QTL}
+%\VignettePackage{bim}
+\documentclass{article}
+
+\begin{document}
+
+\title{Bayesian Interval Mapping}
+\author{Brian S. Yandell, Patrick J. Gaffney, Jaya M. Satagopan, Chunfang Jin and Hao Wu} 
+\maketitle
+
+\section{Overview}
+Bayesian interval mapping library R/bim provides Bayesian analysis of
+multiple quantitative trait loci (QTL) models. This includes posterior
+estimates of the number and location of QTL, and of their
+effects. This document assumes some familiarity with QTL and with
+Bayesian methods. In
+addition it provides graphical diagnostics that can help investigate
+several `better' models. Library R/bim requires R/qtl and R/modreg.
+
+<<echo=FALSE>>=
+library(bim)
+@
+
+\section{Bayesian Interval Mapping}
+
+Consider a simple problem, the 8-week vernalization data for {\em
+Brassica napus}  used by Satagopan et al (1996).
+
+<<fig=TRUE,height=6>>=
+data(vern)
+## summary(vern) ## R/qtl does not work unless class is bc or f2
+plot(vern)
+@
+
+These data are treated as a backcross (although in fact they are from
+a double haploid, homozygous at every locus). The plot, from library
+R/qtl, shows the pattern of missing genotypes, the linkage map, and
+the 11 traits. We focus on \texttt{log10flower8}, the logarithm base
+10 of the flowering time after eight weeks of vernalization.
+
+Bayesian interval mapping proceeds by first running the
+\texttt{bmapqtl} Markov chain Monte Carlo simulation of the posterior.
+
+<<>>=
+bmapqtl.options(prior.nqtl="poisson",mean.nqtl=3,niter=400000,by=400)
+@
+
+\begin{Schunk}
+\begin{Sinput}
+> vernpois.bim = run.bmapqtl(vern)
+\end{Sinput}
+\begin{Soutput}
+Bayesian interval mapping MCMC run in progress. 
+Count of 1000 iterations shown separated by dots (negative for burnin):
+-20.-15.-10.-5.0.
+5.10.15.20.25.30.35.40.45.50.55.60.65.70.75.80.85.90.95.100.105.110.115.
+120.125.130.135.140.145.150.155.160.165.170.175.180.185.190.195.200.205.
+210.215.220.225.230.235.240.245.250.255.260.265.270.275.280.285.290.295.
+300.305.310.315.320.325.330.335.340.345.350.355.360.365.370.375.380.385.
+390.395.
+\end{Soutput}
+\end{Schunk}
+
+<<echo=FALSE>>=
+data(vernpois.bim)
+@
+
+Now that we have the MCMC simulations, we can examine diagnostic
+plots. First, time series of the burnin and MCMC runs gives a
+graphical idea of how well the simulations are `mixing'.
+ 
+<<fig=TRUE,height=6>>=
+    plot.bim.mcmc(vernpois.bim)
+@
+
+A jittered plot of quantitative trait loci by chromosome shows the
+where the posterior concentrates along the genome relative to the
+marker map.
+
+<<fig=TRUE,height=6>>=
+    plot.bim.loci(vernpois.bim, vern)
+@
+
+Model selection is assisted by four plots. The top two concern the
+number of QTL while the bottom two are for the pattern of loci across
+chromosomes. The left panel shows the posterior as a histogram,
+overlaid by the prior (rescaled to fit). The right panel show the
+posterior to prior ratios which make up Bayes factors. A large
+vertical separation on a log scale indicates substantial difference
+among models. The summary shows in numbers what is found in the plots.
+
+<<fig=TRUE,height=6>>=
+model = bim.model(vernpois.bim, vern)
+    summary(model)
+    plot(model)
+@
+
+The effects plots show the quantitative trait loci by a histogram and
+density (blue) on the top plot and effects (additive and possibly
+dominance) in scatter plot with a smoothing spline fit plus or minus
+two standard errors. Vertical lines (red) identify the estimated QTL.
+The summary shows the estimated QTL loci and effects.
+
+<<fig=TRUE,height=6>>=
+qtl = plot.bim.effects(vernpois.bim,vern)
+    summary(qtl)
+@
+
+Finally, summary diagnostics for model parameters are shown as
+histograms and boxplots conditional on the number of QTL. Notice how
+the boxplots level out as the model gets more complex, although there
+is very little data for models with a large number of QTL.
+
+<<fig=TRUE,height=6>>=
+    plot.bim.diag(vernpois.bim)
+@
+
+All of these plots can be produced by one call to
+\texttt{plot(vernpois.bim,vern)}. Following this intial investigation, we
+can refine our graphics by restricting attention to `better'
+models. For instance, the model selection suggests two QTL on the
+chromosome. The option \texttt{pattern}  can pick up only those
+simulations that have 2 QTL on this chromosome. We can then reexamine
+the model
+
+<<fig=TRUE,height=6>>=
+plot.bim.model(vernpois.bim, vern,pattern=c(1,1))
+@
+
+\noindent and reexamine the effects
+
+<<fig=TRUE,height=6>>=
+plot.bim.effects(vernpois.bim,vern,pattern=c(1,1))
+@
+
+\noindent This subsetting is even more effective for full-genome
+studies. Consider analyzing the full \texttt{Bnapus} dataset for the
+trait \texttt{log10flower8}.
+
+We can assess the false discovery rate, which gives us some feedback
+on the width of highest probability density (HPD) regions for QTLs
+(horizontal red lines on loci histograms).
+
+<<fig=TRUE>>=
+plot.bim.fdr(vernpois.bim,vern,pattern=c(1,1))
+@
+
+\end{document}
