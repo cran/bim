@@ -22,7 +22,7 @@ plot.bim(x, cross, nqtl=1, pattern=NULL, exact=FALSE, ... )
   \code{run.bmapqtl}, respectively. This routine creates five plots via
   calls to several other plot routines for bim data.
 }
-\references{ \url{www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
+\references{ \url{http://www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
 \author{ Brian S. Yandell, yandell@stat.wisc.edu }
 
 \seealso{\code{\link[base]{plot}},\code{\link[qtl]{read.cross}},\code{\link{run.bmapqtl}},

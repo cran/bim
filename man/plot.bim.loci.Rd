@@ -28,7 +28,7 @@ plot.bim.loci(x, cross=NULL, nqtl=1, pattern=NULL, exact=FALSE,
   included. Adjust \code{amount} and \code{cex} to modify look of 
   plot. Most useful when looking at multiple chromosomes.
 }
-\references{ \url{www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
+\references{ \url{http://www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
 \author{ Brian S. Yandell, yandell@stat.wisc.edu }
 
 \seealso{\code{\link[base]{jitter}},\code{\link{subset.bim}}}

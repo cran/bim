@@ -19,7 +19,7 @@ bmapqtl.options(\dots,reset=FALSE)
 	\code{"geometric"}.}
       \item{mean.nqtl}{prior for number of QTL (default = 3).}
       \item{niter}{number of iterations (default = 400000).}
-      \item{by}{record every \code{by} iterations (default = 100).}
+      \item{by}{record every \code{by} iterations (default = 400).}
       \item{burnin}{proportion of iterations for burnin (default = .05).}
       \item{preburn}{proportion of burnin used for preburn (default = .05).}
       \item{nqtl}{initial number of QTL (default = 0).}

@@ -45,7 +45,7 @@ density and loci as well as high probability density (HPD) region.
 See \code{\link{plot.bim.effects}} for enhanced plots with HPD and effects
 estimates.
 }
-\references{ \url{www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
+\references{ \url{http://www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
 \author{ Brian S. Yandell, yandell@stat.wisc.edu }
 
 \seealso{\code{\link{plot.bim.effects}}}

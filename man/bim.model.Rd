@@ -48,7 +48,7 @@ bim.pattern( bim, cross = NULL, nqtl = 1, pattern=NULL, exact=FALSE,
   In addition, there is an object \code{param} with values for
   \code{nqtl}, \code{pattern}, \code{exact} and \code{cutoff}.
 }
-\references{ \url{www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
+\references{ \url{http://www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
 \author{ Brian S. Yandell, yandell@stat.wisc.edu }
 
 \seealso{\code{\link{plot.bim}},\code{\link{plot.bim.model}},\code{\link{subset.bim}}}

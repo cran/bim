@@ -48,6 +48,30 @@ run.bmapqtl(cross, pheno=1, chrom=0, result.file="")
 \seealso{\code{\link{plot.bim}},
   \code{\link{read.bim}}
 }
+\references{
+  \item \url{http://www.stat.wisc.edu/~yandell/qtl/data/osborn/Bnapus}
+  \item JM Satagopan, BS Yandell, MA Newton and TC Osborn (1996)
+  Markov chain Monte Carlo approach to detect polygene loci
+  for complex traits. Genetics 144: 805-816.
+  \url{http://www.genetics.org/cgi/content/abstract/144/2/805}
+  [first MCMC for experimental crosses; analysis of B. napus N2=LG9 (see
+  \code{\link{vern}} data)]
+  \item JM Satagopan and BS Yandell (1996)
+  Estimating the number of quantitative trait loci via
+  Bayesian model determination.
+  Special Contributed Paper Session on Genetic Analysis of
+  Quantitative Traits and Complex Diseases, Biometrics Section,
+  Joint Statistical Meetings, Chicago, IL.
+  \url{ftp://ftp.stat.wisc.edu/pub/yandell/revjump.html}
+[first RJ-MCMC for experimental crosses; analysis of B. napus N2=LG9; see
+  \code{\link{vern}} data]
+  \item Gaffney PJ (2001)
+     An efficient reversible jump Markov chain Monte Carlo approach to
+     detect multiple loci and their effects in inbred crosses.
+     PhD Dissertation, Dept of Statist, UW-Madison.
+\url{http://wwwlib.umi.com/dissertations/fullcit/301245}
+
+}
 
 \examples{
 \dontrun{

@@ -1,23 +1,30 @@
 \name{fisch}
 \alias{fisch}
+\alias{fisch.bim}
 \non_function{}
-\title{Cross structure for 8 QTL Stephens and Fisch simulated data}
+\title{Eight QTL Stephens and Fisch simulated data}
 \description{
 Contains genotypes and phenotypes for data simulated using model in
 Stephens and Fisch (1998) but with 90 percent heritability.
 }
-\usage{data(fisch)}
-\format{
-See \code{read.cross} in \code{library(qtl)} for format.
+\usage{
+data(fisch)
+data(fisch.bim)
 }
-\seealso{\code{\link[qtl]{read.cross}},\code{\link{plot.bim}}}
+\format{
+  \code{fisch} is f2 (see \code{\link[qtl]{read.cross}} for format).
+  \code{fisch.bim} produced by \code{link{run.bmapqtl}}.
+}
+\seealso{\code{\link[qtl]{read.cross}}, \code{\link{plot.bim}}, \code{\link{run.bmapqtl}}}
+\author{ Brian S. Yandell, \url{mailto:yandell@stat.wisc.edu}}
 \source{
-Patrick J. Gaffney (paga@lubrizol.com), Lubrizol Corp.
+Patrick J. Gaffney (\url{mailto:paga@lubrizol.com}), Lubrizol Corp.
 }
 \references{
-\url{www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl}
+\url{http://www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl}
 }
 \examples{
 data(fisch)
+data(fisch.bim)
 }
 \keyword{datasets}

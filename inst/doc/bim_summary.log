@@ -1,0 +1,211 @@
+This is pdfTeX, Version 3.14159-1.10b (Web2C 7.4.5) (format=pdflatex 2003.10.1)  6 OCT 2003 13:45
+**\nonstopmode \input /afs/cs.wisc.edu/p/stat/yandell/public/statgen/Rlib/bim/i
+nst/doc/bim_summary.tex
+
+(/afs/cs.wisc.edu/p/stat/yandell/public/statgen/Rlib/bim/inst/doc/bim_summary.t
+ex
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/base/article.cl
+s
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/unsup/R-1.7.1/lib/R/share/texmf/Sweave.sty
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/base/fontenc.st
+y
+Package: fontenc 2001/06/05 v1.94 Standard LaTeX package
+
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/base/t1enc.def
+File: t1enc.def 2001/06/05 v1.94 Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 38.
+))
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/graphics/graphi
+cx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/graphics/keyval
+.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/graphics/graphi
+cs.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/graphics/trig.s
+ty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/config/graphics
+.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/graphics/pdftex
+.def
+File: pdftex.def 2002/06/19 v0.03k graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/ae/ae.sty
+Package: ae 2001/02/12 1.3 Almost European Computer Modern
+
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/base/fontenc.st
+y
+Package: fontenc 2001/06/05 v1.94 Standard LaTeX package
+
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/base/t1enc.def
+File: t1enc.def 2001/06/05 v1.94 Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 38.
+)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 95.
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/ae/t1aer.fd
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)))
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/fancyvrb/fancyv
+rb.sty
+Package: fancyvrb 2000/03/21
+ Style option: `fancyvrb' v2.7, with DG/SPQR fixes <2000/03/21> (tvz)
+\FV@CodeLineNo=\count88
+\FV@InFile=\read1
+\FV@TabBox=\box26
+\c@FancyVerbLine=\count89
+\FV@StepNumber=\count90
+\FV@OutFile=\write3
+))
+(./bim_summary.aux)
+\openout1 = `bim_summary.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/context/base/supp-pdf
+.tex
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/context/base/supp-mis
+.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count91
+\scratchcounter=\count92
+\scratchtoks=\toks15
+\scratchdimen=\dimen105
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box27
+\scratchread=\read2
+\scratchwrite=\write4
+\zeropoint=\dimen106
+\minusone=\count93
+\thousandpoint=\dimen107
+\emptytoks=\toks16
+\nextbox=\box28
+\nextdepth=\dimen108
+\everyline=\toks17
+\!!counta=\count94
+\!!countb=\count95
+\recursecounter=\count96
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count97
+\nofMParguments=\count98
+\everyMPtoPDFconversion=\toks18
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 15.
+
+Overfull \hbox (102.71649pt too wide) in paragraph at lines 15--15
+ [][] 
+ []
+
+LaTeX Font Info:    Try loading font information for T1+aett on input line 27.
+(/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+<bim_summary-002.pdf, id=1, 433.62pt x 433.62pt>
+File: bim_summary-002.pdf Graphic file (type pdf)
+ <use bim_summary-002.pdf>
+[1
+
+{/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/dvips/config/pdftex.map}]
+ [2 <./bim_summary-002.pdf>]
+<bim_summary-005.pdf, id=39, 433.62pt x 433.62pt>
+File: bim_summary-005.pdf Graphic file (type pdf)
+ <use bim_summary-005.pdf>
+<bim_summary-006.pdf, id=40, 433.62pt x 433.62pt>
+File: bim_summary-006.pdf Graphic file (type pdf)
+ <use bim_summary-006.pdf>
+[3 <./bim_summary-005.pdf>] [4 <./bim_summary-006.pdf>] [5]
+<bim_summary-007.pdf, id=68, 433.62pt x 433.62pt>
+File: bim_summary-007.pdf Graphic file (type pdf)
+ <use bim_summary-007.pdf>
+[6 <./bim_summary-007.pdf>] <bim_summary-008.pdf, id=81, 433.62pt x 433.62pt>
+File: bim_summary-008.pdf Graphic file (type pdf)
+
+<use bim_summary-008.pdf> [7 <./bim_summary-008.pdf>]
+<bim_summary-009.pdf, id=95, 433.62pt x 433.62pt>
+File: bim_summary-009.pdf Graphic file (type pdf)
+ <use bim_summary-009.pdf>
+[8] [9 <./bim_summary-009.pdf>]
+<bim_summary-010.pdf, id=111, 433.62pt x 433.62pt>
+File: bim_summary-010.pdf Graphic file (type pdf)
+ <use bim_summary-010.pdf>
+[10] <bim_summary-011.pdf, id=115, 433.62pt x 433.62pt>
+File: bim_summary-011.pdf Graphic file (type pdf)
+
+<use bim_summary-011.pdf> [11 <./bim_summary-010.pdf>]
+<bim_summary-012.pdf, id=128, 433.62pt x 433.62pt>
+File: bim_summary-012.pdf Graphic file (type pdf)
+ <use bim_summary-012.pdf>
+[12 <./bim_summary-011.pdf>] [13 <./bim_summary-012.pdf>] (./bim_summary.aux) )
+ 
+Here is how much of TeX's memory you used:
+ 1623 strings out of 95439
+ 22336 string characters out of 1188226
+ 66010 words of memory out of 1000001
+ 4617 multiletter control sequences out of 10000+50000
+ 23271 words of font info for 52 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 35i,6n,21p,324b,312s stack positions out of 1500i,500n,5000p,200000b,5000s
+ 153 PDF objects out of 300000
+ 0 named destinations out of 131072
+ 45 words of extra memory for PDF output out of 65536
+{/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/dvips/tetex/74afc74c.enc}
+</afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/fonts/type1/bluesky/cm/cm
+ti10.pfb>{/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/dvips/tetex/09fb
+bfac.enc}</afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/fonts/type1/blue
+sky/cm/cmtt10.pfb></afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/texmf/fonts/t
+ype1/bluesky/cm/cmsltt10.pfb>{/afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/te
+xmf/dvips/tetex/f7b6d320.enc}</afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/share/te
+xmf/fonts/type1/bluesky/cm/cmr10.pfb></afs/cs.wisc.edu/s/tetex-2.0.2/i386_rh72/
+share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></afs/cs.wisc.edu/s/tetex-2.0.2/i
+386_rh72/share/texmf/fonts/type1/bluesky/cm/cmr12.pfb></afs/cs.wisc.edu/s/tetex
+-2.0.2/i386_rh72/share/texmf/fonts/type1/bluesky/cm/cmr17.pfb>
+Output written on bim_summary.pdf (13 pages, 1101171 bytes).

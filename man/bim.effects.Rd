@@ -68,7 +68,7 @@ Purple triangles indicate marker locations if supplied. Red circles and
 vertical dashed lines at estimated loci and effects. Vertical black
 lines delineate chromosomes.
 }
-\references{ \url{www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
+\references{ \url{http://www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
 \author{ Brian S. Yandell, yandell@stat.wisc.edu }
 
 \seealso{\code{\link{plot.bim}},\code{\link{subset.bim}},\code{\link{bim.qtl}}}

@@ -17,7 +17,7 @@ summary.bim.qtl( object, \dots )
     \code{\link{bim.qtl}} or \code{\link{bim.effects}})}
   \item{\dots}{additional arguments to \code{\link[base]{summary}}}
 }
-\references{ \url{www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
+\references{ \url{http://www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
 \author{ Brian S. Yandell, yandell@stat.wisc.edu }
 
 \seealso{\code{\link{run.bmapqtl}},\code{\link{bim.model}},\code{\link{bim.qtl}},

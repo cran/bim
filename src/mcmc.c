@@ -81,6 +81,8 @@ void mcmc(MCMC_PARAM* myMCMC, DATA* myData, PRIORS* priors,
      if (iter % 5000 == 0)  /* perform integrity checks */
 	{
 	  Rprintf ("%d.",iter/1000);
+	  if(iter==50000*(iter/50000))
+	    Rprintf("\n");
 	  checkResid(myData->nn, myData->nQtl, myData->mu, myData->y, 
 		     myData->myQtls, myWork->resid, myData->gmiss);
 	  for (i=1; i<= myData->nChrom; i++)
@@ -152,10 +154,11 @@ void mcmc(MCMC_PARAM* myMCMC, DATA* myData, PRIORS* priors,
 
 
     }  /* end iter */
+  Rprintf("\n");
 
   /* close results file 
-  fflush(write_res);
-  fclose(write_res);*/
+     fflush(write_res);
+     fclose(write_res);*/
 }
 
 

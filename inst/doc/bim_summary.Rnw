@@ -22,7 +22,7 @@ Bayesian methods. In
 addition it provides graphical diagnostics that can help investigate
 several `better' models. Library R/bim requires R/qtl and R/modreg.
 
-<<echo=FALSE>>=
+<<echo=TRUE>>=
 library(bim)
 @
 
@@ -33,7 +33,7 @@ Brassica napus}  used by Satagopan et al (1996).
 
 <<fig=TRUE,height=6>>=
 data(vern)
-## summary(vern) ## R/qtl does not work unless class is bc or f2
+summary(vern)
 plot(vern)
 @
 
@@ -47,27 +47,11 @@ Bayesian interval mapping proceeds by first running the
 \texttt{bmapqtl} Markov chain Monte Carlo simulation of the posterior.
 
 <<>>=
-bmapqtl.options(prior.nqtl="poisson",mean.nqtl=3,niter=400000,by=400)
+bmapqtl.options(prior.nqtl="poisson")
 @
 
-\begin{Schunk}
-\begin{Sinput}
-> vernpois.bim = run.bmapqtl(vern)
-\end{Sinput}
-\begin{Soutput}
-Bayesian interval mapping MCMC run in progress. 
-Count of 1000 iterations shown separated by dots (negative for burnin):
--20.-15.-10.-5.0.
-5.10.15.20.25.30.35.40.45.50.55.60.65.70.75.80.85.90.95.100.105.110.115.
-120.125.130.135.140.145.150.155.160.165.170.175.180.185.190.195.200.205.
-210.215.220.225.230.235.240.245.250.255.260.265.270.275.280.285.290.295.
-300.305.310.315.320.325.330.335.340.345.350.355.360.365.370.375.380.385.
-390.395.
-\end{Soutput}
-\end{Schunk}
-
-<<echo=FALSE>>=
-data(vernpois.bim)
+<<>>=
+    vernpois.bim = run.bmapqtl(vern)
 @
 
 Now that we have the MCMC simulations, we can examine diagnostic

@@ -33,7 +33,7 @@ plot.bim.diag(x, nqtl=1, pattern=NULL, exact=FALSE,
   \code{"addvar"} (variance of \code{add}), \code{"domvar"} (variance of
   \code{add}). Marginal and conditional medians are printed.
 }
-\references{ \url{www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
+\references{ \url{http://www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
 \author{ Brian S. Yandell, yandell@stat.wisc.edu }
 
 \seealso{\code{\link{plot.bim}}, \code{\link{density}}, \code{\link[base]{boxplot}}}

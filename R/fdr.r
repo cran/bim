@@ -62,8 +62,9 @@ bim.fdr <- function( x, cross, nqtl = 1, pattern=NULL, exact=FALSE, chr, ...,
   ## prior probability of no QTL at locus
   require(modreg)
   prob <- ( 1 - levels ) / ( 1 - size$all )
-  prob[ is.na( prob ) ] <- 0
-  spline <- smooth.spline( size$all, prob, df = df )
+  prob[ prob == Inf ] <- NA
+  tmp <- !is.na( prob )
+  spline <- smooth.spline( size$all[tmp], prob[tmp], df = df )
   hyp <- c( H0 = min( spline$y ), M0 = mean( x$iter$nqtl == 0 ))
   hyp["M1"] <- 1 - hyp["M0"]
   print( hyp )
@@ -85,7 +86,7 @@ plot.bim.fdr <- function( x, cross, ..., fdr = bim.fdr( x, cross, ... ),
   par( mfrow = c(1,2), mar = c(3.1,3.1,0.2,3.1))
   ## plot estimate prior of no QTL at any given locus
   ## as limit as size -> 0
-  plot(fdr$size[,"all"],fdr$prob, xlab = "", ylab = "", ylim=c(0,1))
+  plot(fdr$size$all,fdr$prob, xlab = "", ylab = "", ylim=c(0,1))
   mtext( "relative size of HPD region", 1, 2 )
   mtext( "pr( H=0 | p>size )", 2, 2 )
   lines( fdr$spline$x, fdr$spline$y,col="blue",lwd = 3)

@@ -44,33 +44,29 @@ Lem, eru1, eru2, fad3, isoDia, isoIdh, isoPgi, isoLap, pr2, slg6, Aca1, cor15
 Remaining columns are for individual DH lines (identifier 302-455).
 }
 \references{
-  \item \url{www.stat.wisc.edu/~yandell/qtl/data/osborn/Bnapus}
+  \item \url{http://www.stat.wisc.edu/~yandell/qtl/data/osborn/Bnapus}
   \item Ferreira ME, Satagopan J, Yandell BS, Williams PH, Osborn TC
   (1995) Mapping loci controlling vernalization requirement and
   flowering time in Brassica napus. Theor Appl Genet
   90: 727-732. [original source and analysis]
+  \item JM Satagopan, BS Yandell, MA Newton and TC Osborn (1996)
+  Markov chain Monte Carlo approach to detect polygene loci
+  for complex traits. Genetics 144: 805-816.
+  \url{http://www.genetics.org/cgi/content/abstract/144/2/805}
+  [first MCMC for experimental crosses; analysis of B. napus N2=LG9; see
+  \code{\link{vern}} data]
   \item Kole C, Thorman CE, Karlsson BH, Palta JP, Gaffney P, Yandell
   BS, Osborn TC (2001)
   Comparative mapping of loci controlling winter survival and
   related traits in oilseed Brassica rapa and B. napus.
   Molecular Breeding 1: 329-339. [refined map and reanalysis]
-  \item JM Satagopan, BS Yandell, MA Newton and TC Osborn (1996)
-  Markov chain Monte Carlo approach to detect polygene loci
-  for complex traits. Genetics 144: 805-816.
-  \url{http://www.genetics.org/cgi/content/abstract/144/2/805}
-  [first MCMC for experimental crosses; analysis of B. napus N2=LG9 (see
-  \code{\link{vern}} data)]
-  \item JM Satagopan and BS Yandell (1996)
-  Estimating the number of quantitative trait loci via
-  Bayesian model determination.
-  Special Contributed Paper Session on Genetic Analysis of
-  Quantitative Traits and Complex Diseases, Biometrics Section,
-  Joint Statistical Meetings, Chicago, IL.
-  ftp://ftp.stat.wisc.edu/pub/yandell/revjump.html">Paper</a>]
-[first RJ-MCMC for experimental crosses; analysis of B. napus N2=LG9 (see
-  \code{\link{vern}} data)</a>]
 }
 \examples{
 data(Bnapus)
+\dontrun{
+summary(Bnapus)
+plot(Bnapus)
+Bnapus.bim = run.bmapqtl(Bnapus,"log10flower8")
+}
 }
 \keyword{datasets}

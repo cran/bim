@@ -30,7 +30,7 @@ QTL and at least the \code{pattern} across chromosomes. \code{pattern}
   present, chromosome names are not allowed. Further subsets to only
   include QTL from these iterations that are on chromosomes \code{chr}.
 }
-\references{ \url{www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
+\references{ \url{http://www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
 \author{ Brian S. Yandell, yandell@stat.wisc.edu }
 
 \seealso{\code{\link{read.bim}}}

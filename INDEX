@@ -1,35 +1,26 @@
-run.bmapqtl      run Bmapqtl.exe from inside R
-bmapqtl.options  options for Bayesian interval mapping MCMC sampling
-
-plot.bim	 create all bim diagnostic plots
-plot.bim.diag    marginal and conditional graphical summaries of diagnostics
-plot.bim.effects histogram of QTL loci plus scatterplots of effects
-plot.bim.fdr     plot curves for QTL false discovery rate
-plot.bim.loci    jittered chromosome plot of QTL loci
-plot.bim.mcmc    plot of burnin and mcmc sequence diagnostics
-plot.bim.model   model selection: runs bim.nqtl and bim.pattern
-plot.bim.qtl     density of QTL loci suitable for overlay plots
-
-summary.bim      summary of bim object from read.bim
-summary.bim.model summary of object from bim.model 
-summary.bim.qtl  summary of object from bim.qtl or bim.effects
-
-Bnapus           cross object for Brassica napus full data
-fisch            cross object for fisch simulated data
-fisch.bim        bim object for fisch simulated data
-vern             cross object for Brassica napus 8-week vernalization data
-verngeo.bim      Bayesian interval map samples of vern using geometric 3 prior
-vernpois.bim     Bayesian interval map samples of vern using Poisson 3 prior
-
-subset.bim       subsetting of bim object
-
-bim.fdr          estimate false discovery rate features
-bim.model        estimate posterior and Bayes factors for number and pattern of QTL
-bim.nqtl         estimate posterior and Bayes factors for number of QTL
-bim.pattern      estimate posterior and Bayes factors for chromosome pattern of QTL
-bim.qtl          density and point estimates for QTL loci
-
-read.bim         read Bayesian interval mapping samples from WinQTL output
-read.bmapqtl     read nval.dat file used by WinQTL
-write.bmapqtl    write nval.dat file used by WinQTL
-
+bim.effects             Bayesian QTL map of loci and effects
+bim.fdr                 Bayesian False Discovery Rate for QTL mapping
+bim.model               Bayesian model selection for number and
+                        pattern of QTL across genome
+bim.                    Bayesian QTL estimation and mapping of loci
+bmapqtl.options         Options Settings for BmapQTL
+Bnapus                  Cross structure for complete Brassica napus
+                        data
+fisch                   Eight QTL Stephens and Fisch simulated data
+plot.bim.diag           Marginal and model-conditional summaries of
+                        Bayesian interval mapping diagnostics
+plot.bim.loci           Jittered plot of Bayesian QTL loci samples by
+                        chromosome
+plot.bim.mcmc           Bayesian MCMC sequence plots for burnin and
+                        iterations.
+plot.bim.model          Graphical model assessment for Bayesian
+                        interval mapping
+plot.bim                Diagnostics plots for Bayesian interval
+                        mapping
+read.bim                Read samples from WinQTL output
+read.bmapqtl            Read and write options for WinQTL
+run.bmapqtl             Run Bmapqtl reversible jump MCMC
+subset.bim              Subsetting Bayesian interval mapping data
+summary.bim             Summary of Bayesian interval mapping samples
+vern                    Eight week vernalization data for Brassica
+                        napus

@@ -52,10 +52,10 @@ an object of class \code{smooth.spline}.
     \code{critical[value} settings)}
   }
 \details{
-FDR follows ideas of Storey (\url{www.stat.berkeley.edu/~storey})
+FDR follows ideas of Storey (\url{http://www.stat.berkeley.edu/~storey})
 adapted to Bayesian setting.
 }
-\references{ \url{www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
+\references{ \url{http://www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
 \author{ Brian S. Yandell, yandell@stat.wisc.edu }
 
 \seealso{\code{\link{plot.bim.effects}},\code{\link{bim.qtl}}}

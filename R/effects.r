@@ -52,11 +52,15 @@ bim.qtl <- function( x, cross = bim.cross( x ),
   o <- order( -y )
   p <- cumsum( unlist( lapply( dens, function( chr ) chr$y / ( chr$x[2] - chr$x[1] )))[o] )
   p <- p / max( p )
-  
+
   hpd <- numeric( length( levels ))
   names( hpd ) <- levels
-  for (i in seq(along = levels))
-    hpd[i] <- min(y[o][p <= levels[i]])
+  for (i in seq(along = levels)) {
+    tmp <- p <= levels[i]
+    if( !any( tmp ))
+      tmp <- 1
+    hpd[i] <- min(y[o][tmp])
+  }
 
   smo <- lapply( dens, function( tmp, nqtl ) {
     ## find where density peaks by downturn on both sides

@@ -35,7 +35,7 @@ flat blue line and even spread of grey. Trend or cyclic pattern
 indicates Markov chain is not mixing well and needs to be run much
 longer. No formal assessment is provided.
 }
-\references{ \url{www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
+\references{ \url{http://www.stat.wisc.edu/~yandell/qtl/software/Bmapqtl} }
 \author{ Brian S. Yandell, yandell@stat.wisc.edu }
 
 \seealso{\code{\link{run.bmapqtl}}}

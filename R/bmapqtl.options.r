@@ -26,7 +26,7 @@ bmapqtl.options.init <- function() {
 .bmapqtl.options$prior.nqtl <<- "geometric"
 .bmapqtl.options$mean.nqtl <<- 3 # prior for number of QTL
 .bmapqtl.options$niter <<- 400000
-.bmapqtl.options$by <<- 100 # number of iterations, recorded by
+.bmapqtl.options$by <<- 400 # number of iterations, recorded by
 .bmapqtl.options$burnin <<- 0.05
 .bmapqtl.options$preburn <<- 0.05 # burn-in and pre-burn-in
 .bmapqtl.options$nqtl <<- 0 # initial number of QTL
@@ -38,7 +38,7 @@ bmapqtl.options.init <- function() {
 .bmapqtl.options$seed <<- 0 # random seed
 assign(".bmapqtl.options",.bmapqtl.options,1)
 }
-bmapqtl.options <- function(...,reset=FALSE|!exists(".bmapqtl.options"))
+bmapqtl.options <- function(...,reset=FALSE)
 {
  
   # take the arguments
@@ -46,8 +46,12 @@ bmapqtl.options <- function(...,reset=FALSE|!exists(".bmapqtl.options"))
   nargu <- length(args)
 
   # return variable
-  result <- list(NULL)
-  
+  if( reset |!exists(".bmapqtl.options")) {
+      bmapqtl.options.init()
+    result <- .bmapqtl.options
+  }
+  else
+    result <- list(NULL)
   # assign values
   if(nargu&!reset) {
     for (i in 1:nargu) {
@@ -60,15 +64,24 @@ bmapqtl.options <- function(...,reset=FALSE|!exists(".bmapqtl.options"))
       else {
         # trying to assign an option
         # error checking stuff here
-        if(argname == "mean.nqtl")
-          if(any(argvalue < 0))
-            stop("Prior for number of QTL need to be greater than or equal to zero")
-        if(argname == "niter")
-          if(any(argvalue <= 0))
-            stop("Number of iterations need to be greater than zero")
-        if(argname == "seed")
-          if(any(argvalue < 0))
-            stop("Random number seed need to be greater than or equal to zero")
+        switch( argname,
+               "mean.nqtl" = {
+                 if(any(argvalue < 0))
+                   stop("Prior for number of QTL need to be greater than or equal to zero")
+               },
+               "niter" = {
+                 if(any(argvalue <= 0))
+                   stop("Number of iterations need to be greater than zero")
+               },
+               "seed" = {
+                 if(any(argvalue < 0))
+                   stop("Random number seed need to be greater than or equal to zero")
+               },
+               "prior.nqtl" = {
+                 priors = c("geometric","poisson","uniform")
+                 argvalue <- priors[ pmatch( tolower( argvalue ), priors, nomatch = 1 ) ]
+               },
+               )
         # assign values
         .bmapqtl.options[[argname]] <<- argvalue
         result[[i]] <- .bmapqtl.options[[argname]]
@@ -80,11 +93,6 @@ bmapqtl.options <- function(...,reset=FALSE|!exists(".bmapqtl.options"))
     #  .bmapqtl.options$chrom <<- rep(1, .bmapqtl.options$nqtl)
     #  .bmapqtl.options$locus <<- rep(1, .bmapqtl.options$nqtl)
     #}
-  }
-  else {
-    if( reset )
-      bmapqtl.options.init()
-    result <- .bmapqtl.options
   }
   cat( "simulate", as.integer( .bmapqtl.options$niter ), "MCMC steps, recording by",
       as.integer( .bmapqtl.options$by ), "with", .bmapqtl.options$burnin,
