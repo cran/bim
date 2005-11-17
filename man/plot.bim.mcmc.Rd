@@ -9,8 +9,7 @@
 \usage{
 plot.bim.mcmc(x, element = c("burnin","iter"),
   xlab = c("burnin sequence","mcmc sequence"),
-  items = <<see below>>, ylabs = items,
-  types = <<see below>>, \dots )
+  items, ylabs = items, types, \dots )
 
 }
 \arguments{

@@ -10,7 +10,7 @@
 bim.qtl(x, cross, nqtl=1, pattern=NULL, exact=FALSE,
   chr, bw=2, levels = seq(.5,.95,by=.05) )
 plot.bim.qtl(x, cross, nqtl = 1, pattern = NULL,
-  exact = FALSE, chr, bw = 2, qtl=<<see below>>,
+  exact = FALSE, chr, bw = 2, qtl,
   level = 0.80, col = "black", add = FALSE, \dots) 
 }
 \arguments{

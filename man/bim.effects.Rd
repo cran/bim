@@ -8,10 +8,9 @@
 }
 \usage{
 plot.bim.effects(x, cross, nqtl = 1, pattern = NULL, exact = FALSE,
-  chr, bw = 2, qtl = <<see below>>, cex, level = .80,
-  project=<<see below>>, main=<<see below>>, mfcol=<<see below>>, \dots )
+  chr, bw = 2, qtl, cex, level = .80, project, main, mfcol, \dots )
 bim.effects(x, cross, nqtl = 1, pattern = NULL, exact = FALSE, chr,
-  bw = 2, qtl = <<see below>>)
+  bw = 2, qtl)
 
 }
 \arguments{
@@ -25,7 +24,6 @@ bim.effects(x, cross, nqtl = 1, pattern = NULL, exact = FALSE, chr,
   \item{bw}{bandwidth for loci density}
   \item{qtl}{QTL estimate information (see value)}
   \item{cex}{ character expansion for scatter plots }
-  \item{prefix}{ prefix for chromosome names, typically \code{c} }
   \item{level}{level for HPD region from \code{seq(.5,.95,by=.05)}}
   \item{project}{project identifier, default is name of \code{x} argument}
   \item{main}{title, with default \code{expression(project summaries 

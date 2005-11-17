@@ -7,8 +7,8 @@
   evaluates pattern of QTL across chromosomes.
 }
 \usage{
-plot.bim.model( x, cross = NULL, nqtl = 1, pattern=NULL, exact=FALSE,
-  cutoff = 1, assess = <<see below>>, \dots )
+plot.bim.model( x, cross, nqtl = 1, pattern=NULL, exact=FALSE,
+  cutoff = 1, assess, \dots )
 }
 \arguments{
   \item{x}{ object of class \code{bim} or class \code{bim.model} }

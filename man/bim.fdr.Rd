@@ -8,9 +8,8 @@ plot.bim.fdr to determine FDR for HPD level used in plot.bim.effects.
 }
 \usage{
 bim.fdr(x, cross, nqtl = 1, pattern = NULL, exact = FALSE, chr,
-  \dots, levels=<<see below>>,df=3,  qtl = <<see below>>)
-plot.bim.fdr(x, cross, \dots, fdr = <<see below>>,
-  critical.value=<<see below>>, hpd = NULL )
+  \dots, levels,df=3,  qtl)
+plot.bim.fdr(x, cross, \dots, fdr, critical.value, hpd = NULL )
 }
 \arguments{
   \item{x}{ object of class \code{bim} }

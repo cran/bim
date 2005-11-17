@@ -8,8 +8,7 @@ as LOD, variance, or heritability.
 }
 \usage{
 plot.bim.diag(x, nqtl=1, pattern=NULL, exact=FALSE,
-  items=<<see below>>, mains=items,
-  mfrow=<<see below>>, \dots )
+  items, mains=items, mfrow, \dots )
 }
 \arguments{
   \item{x}{ object of class \code{bim} }
