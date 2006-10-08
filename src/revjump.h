@@ -107,7 +107,6 @@ int qtl_compare(const void* a, const void* b);
 #define MAX_ADD_PARAM 2
 
 
-
 #define INFINITY 1E40
 
 /* codes for birth/death moves */

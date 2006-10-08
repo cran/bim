@@ -111,7 +111,8 @@ bim.prior <- function( bim, range )
 }
 ##############################################################################
 subset.bim <- function( x, cross = bim.cross( x ),
-                       nqtl = 1, pattern = NULL, exact = FALSE, chr, ... )
+                       nqtl = 1, pattern = NULL, exact = FALSE,
+                       chr = seq(length(cross$geno)), ... )
 {
   nqt <- nqtl[1]
   if( !is.null( pattern )) {
@@ -228,6 +229,7 @@ bim.cex <- function( bim )
 ##############################################################################
 plot.bim <- function( x, cross = bim.cross( x ),
                      nqtl = 1, pattern = NULL, exact = FALSE,
+                     chr = seq(length(cross$geno)),
                      ... )
 {
   cat( "time series of burnin and mcmc runs\n" )
@@ -296,7 +298,8 @@ bim.smooth <- function( x, y )
 ##############################################################################
 plot.bim.loci <- function( x, cross = bim.cross( x ),
                           nqtl = 1, pattern = NULL, exact = FALSE,
-                          chr, labels = TRUE, amount = .35,
+                          chr = seq(length(cross$geno)),
+                          labels = TRUE, amount = .35,
                           cex = bim.cex( x ), ... )
 {
   amount <- max( 0, min( 0.45, amount ))

@@ -19,7 +19,8 @@
 ## Foundation, 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 ##
 ##############################################################################
-bim.fdr <- function( x, cross, nqtl = 1, pattern=NULL, exact=FALSE, chr, ...,
+bim.fdr <- function( x, cross, nqtl = 1, pattern=NULL, exact=FALSE,
+                    chr = seq(length(cross$geno)), ...,
                     levels = seq( 0.01, 0.99, by = 0.01 ), df = 3,
                     qtl = bim.qtl( x, cross, nqtl, pattern, exact, ..., levels = levels ))
 {

@@ -15,7 +15,7 @@ See \code{read.cross} in \code{library(qtl)} for format.
 Thomas C. Osborn (\url{mailto:tcosborn@facstaff.wisc.edu}), Department of Agronomy,
 UW-Madison (\url{http://agronomy.wisc.edu}).
 }
-\detail{
+\details{
 Traits included are percent winter survival for 1992-3, 1993-4,
 1994-5, 1997-8, and 1999-2000 (surv92, surv93, surv94, surv97, surv99,
 respectively), and days to flowering after no vernalization (flower0),

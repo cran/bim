@@ -1,11 +1,11 @@
 %PDF-1.1
-%Å‚Å„ÅœÅ”
+%Å‚Å„ÅœÅ”\r
 1 0 obj
 <<
-/CreationDate (D:20051117215209)
-/ModDate (D:20051117215209)
+/CreationDate (D:20061108210426)
+/ModDate (D:20061108210426)
 /Title (R Graphics Output)
-/Producer (R 2.0.1)
+/Producer (R 2.4.0)
 /Creator (R)
 >>
 endobj
@@ -80,7 +80,7 @@ S
 Q q 0.00 216.00 216.00 216.00 re W n
 BT
 0.000 0.000 0.000 rg
-/F2 1 Tf 10.00 0.00 -0.00 10.00 101.82 231.54 Tm (Markers) Tj
+/F2 1 Tf 10.00 0.00 -0.00 10.00 101.92 231.54 Tm (Markers) Tj
 /F2 1 Tf 0.00 10.00 -10.00 0.00 10.76 306.36 Tm (Individuals) Tj
 ET
 Q q 49.00 276.96 141.90 106.04 re W n
@@ -1293,7 +1293,7 @@ Q q 0.00 216.00 216.00 216.00 re W n
 BT
 0.000 0.000 0.000 rg
 /F2 1 Tf 10.00 0.00 -0.00 10.00 111.89 382.13 Tm (ch1) Tj
-/F3 1 Tf 12.00 0.00 -0.00 12.00 65.94 403.19 Tm (Missing genotypes) Tj
+/F3 1 Tf 12.00 0.00 -0.00 12.00 65.88 403.19 Tm (Missing genotypes) Tj
 ET
 Q q 216.00 216.00 216.00 216.00 re W n
 Q q
@@ -1328,53 +1328,40 @@ BT
 0.000 0.000 0.000 rg
 /F2 1 Tf 10.00 0.00 -0.00 10.00 305.95 231.54 Tm (Chromosome) Tj
 /F2 1 Tf 0.00 10.00 -10.00 0.00 226.76 299.69 Tm (Location \(cM\)) Tj
-ET
 0.000 0.000 0.000 RG
 0.75 w
 [] 0 d
 1 J
 1 j
 10.00 M
-335.95 379.07 m
-335.95 280.88 l
-S
-303.11 379.07 m
-368.80 379.07 l
-S
-303.11 368.77 m
-368.80 368.77 l
-S
-303.11 354.96 m
-368.80 354.96 l
-S
-303.11 347.00 m
-368.80 347.00 l
-S
-303.11 339.05 m
-368.80 339.05 l
-S
-303.11 328.86 m
-368.80 328.86 l
-S
-303.11 316.34 m
-368.80 316.34 l
-S
-303.11 304.05 m
-368.80 304.05 l
-S
-303.11 298.09 m
-368.80 298.09 l
-S
-303.11 280.88 m
-368.80 280.88 l
-S
-BT
-/F2 1 Tf 10.00 0.00 -0.00 10.00 327.89 269.20 Tm (ch1) Tj
 ET
-335.95 276.96 m
-335.95 274.83 l
-S
+335.95 379.07 m 335.95 280.88 l S
+300.48 379.07 m 371.43 379.07 l S
+300.48 368.77 m 371.43 368.77 l S
+300.48 354.96 m 371.43 354.96 l S
+300.48 347.00 m 371.43 347.00 l S
+300.48 339.05 m 371.43 339.05 l S
+300.48 328.86 m 371.43 328.86 l S
+300.48 316.34 m 371.43 316.34 l S
+300.48 304.05 m 371.43 304.05 l S
+300.48 298.09 m 371.43 298.09 l S
+300.48 280.88 m 371.43 280.88 l S
+Q q
+0.000 0.000 0.000 RG
+0.75 w
+[] 0 d
+1 J
+1 j
+10.00 M
+335.95 276.96 m 335.95 276.96 l S
+335.95 276.96 m 335.95 270.98 l S
 BT
+0.000 0.000 0.000 rg
+/F2 1 Tf 10.00 0.00 -0.00 10.00 327.89 255.44 Tm (ch1) Tj
+ET
+Q q 216.00 216.00 216.00 216.00 re W n
+BT
+0.000 0.000 0.000 rg
 /F3 1 Tf 12.00 0.00 -0.00 12.00 299.94 403.19 Tm (Genetic map) Tj
 ET
 Q q 49.00 60.96 141.90 106.04 re W n
@@ -1382,7 +1369,8 @@ Q q 0.00 0.00 216.00 216.00 re W n
 BT
 0.000 0.000 0.000 rg
 /F3 1 Tf 12.00 0.00 -0.00 12.00 103.94 187.19 Tm (vern8) Tj
-/F2 1 Tf 10.00 0.00 -0.00 10.00 107.45 15.54 Tm (vern8) Tj
+/F2 1 Tf 10.00 0.00 -0.00 10.00 107.44 15.54 Tm (phe 1) Tj
+/F2 1 Tf 0.00 10.00 -10.00 0.00 10.76 90.36 Tm (Frequency) Tj
 ET
 Q q
 0.000 0.000 0.000 RG
@@ -1400,6 +1388,17 @@ BT
 /F2 1 Tf 10.00 0.00 -0.00 10.00 78.22 39.44 Tm (2.5) Tj
 /F2 1 Tf 10.00 0.00 -0.00 10.00 116.87 39.44 Tm (3.0) Tj
 /F2 1 Tf 10.00 0.00 -0.00 10.00 155.51 39.44 Tm (3.5) Tj
+ET
+49.00 64.88 m 49.00 142.40 l S
+49.00 64.88 m 43.03 64.88 l S
+49.00 90.72 m 43.03 90.72 l S
+49.00 116.56 m 43.03 116.56 l S
+49.00 142.40 m 43.03 142.40 l S
+BT
+/F2 1 Tf 10.00 0.00 -0.00 10.00 31.49 61.29 Tm (0) Tj
+/F2 1 Tf 10.00 0.00 -0.00 10.00 31.49 87.13 Tm (5) Tj
+/F2 1 Tf 10.00 0.00 -0.00 10.00 25.93 112.97 Tm (10) Tj
+/F2 1 Tf 10.00 0.00 -0.00 10.00 25.93 138.81 Tm (15) Tj
 ET
 Q q 49.00 60.96 141.90 106.04 re W n
 0.000 0.000 0.000 RG
@@ -1429,7 +1428,7 @@ Q
 endstream
 endobj
 8 0 obj
-38377
+38990
 endobj
 3 0 obj
 <<
@@ -1444,86 +1443,53 @@ endobj
 4 0 obj
 <<
 /ProcSet [/PDF /Text]
-/Font << /F1 5 0 R /F2 10 0 R /F3 11 0 R /F4 12 0 R /F5 13 0 R /F6 14 0 R >>
+/Font << /F1 5 0 R /F2 10 0 R /F3 11 0 R >>
 /ExtGState << >>
 >>
 endobj
 9 0 obj
 <<
 /Type /Encoding
-/BaseEncoding /PDFDocEncoding
+/BaseEncoding /WinAnsiEncoding
 /Differences [ 45/minus 96/quoteleft
 144/dotlessi /grave /acute /circumflex /tilde /macron /breve /dotaccent
 /dieresis /.notdef /ring /cedilla /.notdef /hungarumlaut /ogonek /caron /space]
 >>
 endobj
-10 0 obj
-<<
+10 0 obj <<
 /Type /Font
 /Subtype /Type1
 /Name /F2
 /BaseFont /Helvetica
 /Encoding 9 0 R
->>
-endobj
-11 0 obj
-<<
+>> endobj
+11 0 obj <<
 /Type /Font
 /Subtype /Type1
 /Name /F3
 /BaseFont /Helvetica-Bold
 /Encoding 9 0 R
->>
-endobj
-12 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/Name /F4
-/BaseFont /Helvetica-Oblique
-/Encoding 9 0 R
->>
-endobj
-13 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/Name /F5
-/BaseFont /Helvetica-BoldOblique
-/Encoding 9 0 R
->>
-endobj
-14 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/Name /F6
-/BaseFont /Symbol
->>
-endobj
+>> endobj
 xref
-0 15
+0 12
 0000000000 65535 f 
-0000000020 00000 n 
-0000000162 00000 n 
-0000038825 00000 n 
-0000038908 00000 n 
-0000000211 00000 n 
-0000000294 00000 n 
-0000000374 00000 n 
-0000038804 00000 n 
-0000039045 00000 n 
-0000039301 00000 n 
-0000039398 00000 n 
-0000039500 00000 n 
-0000039605 00000 n 
-0000039714 00000 n 
+0000000021 00000 n 
+0000000163 00000 n 
+0000039439 00000 n 
+0000039522 00000 n 
+0000000212 00000 n 
+0000000295 00000 n 
+0000000375 00000 n 
+0000039418 00000 n 
+0000039626 00000 n 
+0000039883 00000 n 
+0000039980 00000 n 
 trailer
 <<
-/Size 15
+/Size 12
 /Info 1 0 R
 /Root 2 0 R
 >>
 startxref
-39792
+40082
 %%EOF

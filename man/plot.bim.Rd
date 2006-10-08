@@ -6,7 +6,7 @@
   providing graphical model assessment tools.
 }
 \usage{
-plot.bim(x, cross, nqtl=1, pattern=NULL, exact=FALSE, ... )
+plot.bim(x, cross, nqtl=1, pattern=NULL, exact=FALSE, chr, ... )
 }
 \arguments{
   \item{x}{ object of class \code{bim} }
@@ -14,6 +14,7 @@ plot.bim(x, cross, nqtl=1, pattern=NULL, exact=FALSE, ... )
   \item{nqtl}{subset on number of QTL}
   \item{pattern}{subset on chromosome pattern of QTL}
   \item{exact}{subset on exact pattern or number of QTL if true}
+  \item{chr}{subset of chromosomes to plot (numerical indices or chromosome names)}
   \item{...}{graphical parameters can be given as arguments to \code{\link[base]{plot}}}
 }
 \details{

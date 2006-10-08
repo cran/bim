@@ -20,7 +20,8 @@
 ##
 ##############################################################################
 bim.qtl <- function( x, cross = bim.cross( x ),
-                    nqtl=1, pattern=NULL, exact = FALSE, chr,
+                    nqtl=1, pattern=NULL, exact = FALSE,
+                    chr = seq(length(cross$geno)),
                     bw = 2, levels = seq( 0.5, 0.95, by = 0.05 ))
 {
   ## subset x and cross
@@ -107,7 +108,8 @@ bim.qtl <- function( x, cross = bim.cross( x ),
 }
 ##############################################################################
 bim.effects <- function (x, cross = bim.cross( x ),
-                         nqtl = 1, pattern = NULL, exact = FALSE, chr,
+                         nqtl = 1, pattern = NULL, exact = FALSE,
+                         chr = seq(length(cross$geno)),
                          bw = 2, 
                          qtl = bim.qtl( x, cross, nqtl, pattern, exact,, bw ))
 {
@@ -204,7 +206,8 @@ summary.bim.qtl <- function( object, ... )
 }
 ##############################################################################
 plot.bim.effects <- function (x, cross = bim.cross( x ),
-                              nqtl = 1, pattern = NULL, exact = FALSE, chr,
+                              nqtl = 1, pattern = NULL, exact = FALSE,
+                              chr = seq(length(cross$geno)),
                               bw = 2,
                               qtl = bim.effects(x, cross,
                                 nqtl, pattern, exact,, bw ),
@@ -330,7 +333,9 @@ plot.bim.effects <- function (x, cross = bim.cross( x ),
 }
 ##############################################################################
 plot.bim.qtl <- function (x, cross = bim.cross( x ),
-                          nqtl = 1, pattern = NULL, exact = FALSE, chr, bw = 2,
+                          nqtl = 1, pattern = NULL, exact = FALSE,
+                          chr = seq(length(cross$geno)),
+                          bw = 2,
                           qtl = bim.qtl( x, cross, nqtl, pattern, exact,, bw ),
                           level = .8, col = "black", add = FALSE, ...) 
 {
