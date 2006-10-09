@@ -7,9 +7,9 @@
 Quick summary of Bayesian interval mapping samples.
 }
 \usage{
-summary.bim( object, \dots )
-summary.bim.model( object, \dots )
-summary.bim.qtl( object, \dots )
+\method{summary}{bim}( object, \dots )
+\method{summary}{bim.model}( object, \dots )
+\method{summary}{bim.qtl}( object, \dots )
 }
 \arguments{
   \item{object}{ object of class \code{bim} (from \code{\link{run.bmapqtl}}),

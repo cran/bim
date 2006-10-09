@@ -6,7 +6,7 @@ Subset Bayesian interval mapping iterations on number of QTL and/or
 chromosome pattern of QTL, using exact match or inclusive subsetting.
 }
 \usage{
-subset.bim(x, cross, nqtl=1, pattern=NULL, exact=FALSE, chr, \dots )
+\method{subset}{bim}(x, cross, nqtl=1, pattern=NULL, exact=FALSE, chr, \dots )
 }
 \arguments{
   \item{x}{ object of class \code{bim} }
